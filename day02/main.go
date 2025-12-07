@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 )
@@ -35,11 +36,12 @@ func partOne() {
 			}
 
 			mid := strLen / 2
-			if strVal[:mid] == strVal[mid:] {
+			power := int(math.Pow10(mid)) + 1
+			if i%power == 0 {
 				total = total + i
 			}
 		}
 	}
 
-	fmt.Printf("Total: %d", total)
+	fmt.Printf("Part One Total: %d\n", total)
 }
